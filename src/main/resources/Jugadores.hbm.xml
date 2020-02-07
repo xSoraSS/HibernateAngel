@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="Entidades">
+    <class name="Jugadores" table="jugadores">
+        <id name="codigo" column="codigo">
+            <generator class="native">
+            </generator>
+        </id>
+        <property name="Nombre" />
+        <property name="Procedencia" />
+        <property name="Altura" />
+        <property name="Peso" />
+        <property name="Posicion" />
+        <property name="Nombre_equipo" />
+
+
+    </class>
+</hibernate-mapping>
