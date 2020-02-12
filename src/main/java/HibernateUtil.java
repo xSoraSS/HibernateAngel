@@ -13,11 +13,11 @@ public class HibernateUtil {
 
     public static void main(String[] args) {
         SessionFactory sessionFactory;
-        Session s;
+        Session sesion;
 
         sessionFactory = new Configuration().configure().buildSessionFactory();
-        s = sessionFactory.openSession();
-        s.beginTransaction();
+        sesion = sessionFactory.openSession();
+        sesion.beginTransaction();
         List<Jugadores> jugadores = new ArrayList<>();
         int option, id = 1;
         Scanner sc = new Scanner(System.in);
@@ -28,17 +28,25 @@ public class HibernateUtil {
 
         switch (option){
             case 1:
-                jugadores = s.createQuery("FROM Jugadores").list();
+                jugadores = sesion.createQuery("FROM Jugadores").list();
                 jugadores.stream().filter(line -> line.getNombre_equipo().equals("Cavaliers"));
                 break;
             case 2:
                 break;
             case 3:
+                Jugadores jugador = new Jugadores();
+                jugador.setCodigo(999);
+                jugador.setNombre("JugadorPrueba");
+                jugador.setNombre_equipo("Cavaliers");
+                jugador.setAltura("190");
+                jugador.setPeso(90);
+                jugador.setPosicion("A-C");
+                jugador.setProcedencia("Prueba");
+                sesion.save(jugador);
                 break;
             case 4:
                 break;
         }
 
     }
-
 }
