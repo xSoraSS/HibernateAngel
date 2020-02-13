@@ -5,16 +5,25 @@
 
 <hibernate-mapping package="Entidades">
     <class name="Jugadores" table="jugadores">
-        <id name="codigo" column="codigo">
-            <generator class="native">
-            </generator>
-        </id>
-        <property name="Nombre" />
-        <property name="Procedencia" />
-        <property name="Altura" />
-        <property name="Peso" />
-        <property name="Posicion" />
-        <property name="Nombre_equipo" />
+        <id name="codigo" column="codigo" type="java.lang.Integer"/>
+        <property name="Nombre" type="java.lang.String">
+            <column name="Nombre" not-null="false"/>
+        </property>
+        <property name="Procedencia" type="java.lang.String">
+            <column name="Procedencia" not-null="false"/>
+        </property>
+        <property name="Altura" type="java.lang.String">
+            <column name="Altura" not-null="false"/>
+        </property>
+        <property name="Peso" type="java.lang.Integer">
+            <column name="Peso" not-null="false"/>
+        </property>
+        <property name="Posicion" type="java.lang.String">
+            <column name="Posicion" not-null="false"/>
+        </property>
+        <property name="Nombre_equipo" type="java.lang.String">
+            <column name="Nombre_equipo" not-null="false"/>
+        </property>
 
 
     </class>

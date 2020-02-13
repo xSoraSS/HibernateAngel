@@ -4,14 +4,15 @@
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 
 <hibernate-mapping package="Entidades">
-    <class name="Equipos" table="equipos">
-        <id name="Nombre" column="Nombre">
+    <class name="Partidos" table="partidos">
+        <id name="codigo" column="codigo">
             <generator class="native">
             </generator>
         </id>
-        <property name="Ciudad" />
-        <property name="Conferencia" />
-        <property name="Division" />
+        <property name="equipo_local" />
+        <property name="equipo_visitante" />
+        <property name="puntos_local" />
+        <property name="puntos_visitante" />
+        <property name="temporada" />
     </class>
-
 </hibernate-mapping>
