@@ -38,35 +38,35 @@ public class Partidos implements Serializable {
         this.codigo = codigo;
     }
 
-    public String getEquipoLocal() {
+    public String getequipo_local() {
         return equipoLocal;
     }
 
-    public void setEquipoLocal(String equipoLocal) {
+    public void setequipo_local(String equipoLocal) {
         this.equipoLocal = equipoLocal;
     }
 
-    public String getEquipoVisitante() {
+    public String getequipo_visitante() {
         return equipoVisitante;
     }
 
-    public void setEquipoVisitante(String equipoVisitante) {
+    public void setequipo_visitante(String equipoVisitante) {
         this.equipoVisitante = equipoVisitante;
     }
 
-    public Integer getPuntosLocal() {
+    public Integer getpuntos_local() {
         return puntosLocal;
     }
 
-    public void setPuntosLocal(Integer puntosLocal) {
+    public void setpuntos_local(Integer puntosLocal) {
         this.puntosLocal = puntosLocal;
     }
 
-    public Integer getPuntosVisitante() {
+    public Integer getpuntos_visitante() {
         return puntosVisitante;
     }
 
-    public void setPuntosVisitante(Integer puntosVisitante) {
+    public void setpuntos_visitante(Integer puntosVisitante) {
         this.puntosVisitante = puntosVisitante;
     }
 

@@ -19,6 +19,8 @@
 
         <mapping resource="Equipos.hbm.xml"/>
         <mapping resource="Jugadores.hbm.xml"/>
+        <mapping resource="Estadisticas.hbm.xml"/>
+        <mapping resource="Partidos.hbm.xml"/>
 
 
     </session-factory>

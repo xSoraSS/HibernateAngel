@@ -1,4 +1,5 @@
 import Entidades.Equipos;
+import Entidades.Estadisticas;
 import Entidades.Jugadores;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -22,12 +23,15 @@ public class HibernateUtil {
         List<Jugadores> jugadores = new ArrayList<>();
         jugadores = sesion.createQuery("FROM Jugadores").list();
 
+        List<Estadisticas> estadisticasList = new ArrayList<>();
+
         int option;
         Scanner sc = new Scanner(System.in);
 
         System.out.println("1. Mostrar Procedencia y Posición de los jugadores de los Cavaliers." +
                 "\n2. Contar Jugadores Españoles." +
-                "\n3. Insertar Jugador.");
+                "\n3. Insertar Jugador." +
+                "\n4. Mostrar jugadores que en la temporada 04/05 tenían una media de puntos por partido superior a 10.");
         boolean query = true;
         option = sc.nextInt();
 
@@ -57,6 +61,14 @@ public class HibernateUtil {
                 sesion.save(jugador);
                 break;
             case 4:
+                estadisticasList = sesion.createQuery("FROM Estadisticas").list();
+                for (Estadisticas estadisticas : estadisticasList) {
+                    if (estadisticas.getTemporada().equals("04/05") && estadisticas.getPuntosPorPartido() > 10){
+                        for (Jugadores j : jugadores) {
+                            if (j.getCodigo() == estadisticas.getJugador()) System.out.println(j.getNombre());
+                        }
+                    }
+                }
                 break;
         }
         transaction.commit();

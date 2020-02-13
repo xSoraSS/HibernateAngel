@@ -31,6 +31,16 @@ public class Estadisticas implements Serializable {
     @Column(name = "Rebotes_por_partido")
     private Float rebotesPorPartido;
 
+    private Jugadores jugadoresByJugador;
+
+    public Jugadores getJugadoresByJugador() {
+        return jugadoresByJugador;
+    }
+
+    public void setJugadoresByJugador(Jugadores jugadoresByJugador) {
+        this.jugadoresByJugador = jugadoresByJugador;
+    }
+
     public String getTemporada() {
         return temporada;
     }

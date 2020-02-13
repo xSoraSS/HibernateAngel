@@ -1,22 +1,35 @@
 package Entidades;
 
+import org.hibernate.boot.model.source.spi.FetchCharacteristics;
+
+import javax.persistence.*;
 import java.io.Serializable;
 
+@Entity
+@Table(name = "jugadores")
 public class Jugadores implements Serializable {
     private static final long serialVersionUID = 1L;
 
+    @Id
+    @Column(name = "codigo", insertable = false, nullable = false)
     private Integer codigo;
 
+    @Column(name = "Nombre")
     private String Nombre;
 
+    @Column(name = "Procedencia")
     private String Procedencia;
 
+    @Column(name = "Altura")
     private String Altura;
 
+    @Column(name = "Peso")
     private Integer Peso;
 
+    @Column(name = "Posicion")
     private String Posicion;
 
+    @Column(name = "Nombre_equipo")
     private String nombreEquipo;
 
     public Integer getCodigo() {
